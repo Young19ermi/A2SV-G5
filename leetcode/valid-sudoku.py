@@ -1,27 +1,7 @@
-# class Solution:
-#     def isValidSudoku(self, board: List[List[str]]) -> bool:
-#         n = len(board)
-#         for rows in range(n):
-#             elements = set()
-#             for cols  in range(n):
-#                 if board[rows][cols].isdigit() and board[rows][cols] in elements:
-#                     if list(board[:2][:2]) == "." * 3:
-#                         return False
-#                 else:
-#                     elements.add(board[rows][cols])
-                    
-#         for cols in range(n):
-#             elements = set()
-#             for rows in range(n):
-#                 if board[rows][cols].isdigit() and board[rows][cols] in elements:
-#                     if list(board[:2][:2]) == "." * 3:
-#                         return False
-#                 else:
-#                     elements.add(board[rows][cols])
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
         n = len(board)
-        
+        # Wrong submission reason "isinstance(board[row][col], int)" which is always False.
         # Check rows
         for row in range(n):
             elements = set()
@@ -48,6 +28,7 @@ class Solution:
                     for col in range(j, j+3):
                         if board[row][col].isdigit() and board[row][col] in elements:
                             return False
+                            break
                         else:
                             elements.add(board[row][col])
 
