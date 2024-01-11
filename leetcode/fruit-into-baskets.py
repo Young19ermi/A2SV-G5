@@ -1,22 +1,4 @@
-# from collections import defaultdict
-
-# class Solution:
-#     def totalFruit(self, nums: List[int]) -> int:
-#         count = 0
-#         maximum = 0
-#         i = 0
-#         countme = defaultdict(int)
-#         for j in range(len(nums)):
-#             countme[nums[j]] = 1 + countme.get(nums[j], 0)
-#             while len(countme.keys()) > 2 and i < len(nums):
-#                 countme[nums[i]] -= 1
-#                 if countme[nums[i]] == 0:
-#                     del countme[nums[i]]
-#                 count -= 1
-#                 i += 1
-#             count += 1
-#             maximum = max(count, maximum)
-#         return maximum
+from collections import defaultdict
 
 class Solution:
     def totalFruit(self, nums: List[int]) -> int:
@@ -30,11 +12,28 @@ class Solution:
                 countme[nums[i]] -= 1
                 if countme[nums[i]] == 0:
                     del countme[nums[i]]
-                i += 1
                 count -= 1
+                i += 1
             count += 1
             maximum = max(count, maximum)
         return maximum
+
+# class Solution:
+#     def totalFruit(self, nums: List[int]) -> int:
+#         count = 0
+#         maximum = 0
+#         i = 0
+#         countme = defaultdict(int)
+#         for j in range(len(nums)):
+#             countme[nums[j]] = 1 + countme.get(nums[j], 0)
+#             while len(countme.keys()) > 2 and i < len(nums):
+#                 countme[nums[i]] -= 1
+#                 del countme[nums[i]]
+#                 i += 1
+#                 count -= 1
+#             count += 1
+#             maximum = max(count, maximum)
+#         return maximum
 
 
 
