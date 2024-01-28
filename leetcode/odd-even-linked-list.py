@@ -6,15 +6,15 @@
 class Solution:
     def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if not head:
-            return head
-        oddlist = head
-        even = oddlist.next
-        evenlist = even
-        while even and even.next:
-            oddlist.next=even.next
-            oddlist= oddlist.next
-            even.next=oddlist.next
-            even=even.next
-        oddlist.next=evenlist
-        return head        
+            return 
+        slow = head
+        fast = head.next
+        ptr = fast
         
+        while fast and fast.next:
+            slow.next = fast.next
+            slow = fast.next
+            fast.next = fast.next.next
+            fast = fast.next
+        slow.next = ptr
+        return head
