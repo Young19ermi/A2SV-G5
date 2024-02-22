@@ -1,5 +1,9 @@
-class Solution:
-    def scoreOfParentheses(self, s: str) -> int:
+class Solution(object):
+    def scoreOfParentheses(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
         stack = []
         score = 0
         for char in s:
@@ -9,11 +13,4 @@ class Solution:
             else:
                 prev_score = stack.pop()
                 score = prev_score + max(2*score, 1)
-        return score         
-
-
-
-
-
-
-            
+        return score
