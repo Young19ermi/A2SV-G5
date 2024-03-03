@@ -1,0 +1,1 @@
+This repository is designed for the A2SV competitive programming program, tailored to provide advanced problem-solving skills and algorithms. It includes problems from LeetCode, HackerRank, and Codeforces
